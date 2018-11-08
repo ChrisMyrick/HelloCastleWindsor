@@ -3,7 +3,7 @@ using Castle.Core;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using CastleWindsorDI_Example.Logger;
+//using CastleWindsorDI_Example.Logger;
 
 namespace CastleWindsorDI_Example.DependencyInjection
 {

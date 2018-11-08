@@ -85,13 +85,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainObjects\Criminal.cs" />
+    <Compile Include="DomainObjects\Mammal.cs" />
     <Compile Include="DependencyInjection\Attributes.cs" />
     <Compile Include="DependencyInjection\ContainerExtensions.cs" />
-    <Compile Include="Logger\LoggingInterceptor.cs" />
     <Compile Include="DependencyInjection\PropertyInjectionContributor.cs" />
     <Compile Include="DependencyInjection\PropertyInjectionFacility.cs" />
     <Compile Include="DependencyInjection\WinformsInstaller.cs" />
-    <Compile Include="Logger\LoggingConfigurationManager.cs" />
+    <Compile Include="DomainObjects\Person.cs" />
+    <Compile Include="DomainObjects\PoliceOfficer.cs" />
+    <Compile Include="Interfaces\ICanSpeak.cs" />
+    <Compile Include="Interfaces\ICriminal.cs" />
+    <Compile Include="Interfaces\IPerson.cs" />
+    <Compile Include="Interfaces\IPoliceOfficer.cs" />
     <Compile Include="Presenters\IPresenter.cs" />
     <Compile Include="Presenters\Presenter.cs" />
     <Compile Include="Views\IMainView.cs" />

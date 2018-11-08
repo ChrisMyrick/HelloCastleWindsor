@@ -3,7 +3,7 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.Resolvers;
 using Castle.Services.Logging.SerilogIntegration;
 using Castle.Windsor;
-using CastleWindsorDI_Example.Logger;
+//using CastleWindsorDI_Example.Logger;
 
 namespace CastleWindsorDI_Example.DependencyInjection
 {
@@ -17,11 +17,11 @@ namespace CastleWindsorDI_Example.DependencyInjection
         public static void Bootstrap(this WindsorContainer container)
         {
             // Configure logging
-            var logger = LoggerConfigurationManager.GetConfiguredLogger();
+            //var logger = LoggerConfigurationManager.GetConfiguredLogger();
 
             // Using the Serilog logger here rather than the ILogger to avoid having to manually resolve from the container 
-            logger.Information("Bootstrapping the container");
-            container.AddFacility<LoggingFacility>(f => f.LogUsing(new SerilogFactory(logger)));
+            //logger.Information("Bootstrapping the container");
+            //container.AddFacility<LoggingFacility>(f => f.LogUsing(new SerilogFactory(logger)));
 
             // Setup property injection
             container.AddFacility(new PropertyInjectionFacility());

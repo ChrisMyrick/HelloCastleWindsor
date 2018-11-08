@@ -2,7 +2,7 @@
 using Castle.MicroKernel;
 using Castle.Windsor;
 using CastleWindsorDI_Example.DependencyInjection;
-using CastleWindsorDI_Example.Logger;
+//using CastleWindsorDI_Example.Logger;
 using System;
 using System.Deployment.Application;
 using System.Threading;
@@ -19,7 +19,7 @@ namespace CastleWindsorDI_Example
         public static IPresenter Presenter { get; set; }
 
         private static readonly WindsorContainer Container = new WindsorContainer();
-        private static ILogger Logger { get; set; }
+        //private static ILogger Logger { get; set; }
 
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace CastleWindsorDI_Example
         private static void ManuallyResolveComponents()
         {
             Presenter = Container.Resolve<IPresenter>();
-            Logger = Container.Resolve<ILogger>();
+            //Logger = Container.Resolve<ILogger>();
 
             //Instantiation is required here due to dynamic proxy created by CastleWindsor which expects
             //a Form type (not an interface) at Application.Run
@@ -55,7 +55,7 @@ namespace CastleWindsorDI_Example
             }
             catch (ComponentRegistrationException ex)
             {
-                Logger.Error("An error occurred while bootstrapping the container", ex);
+                //Logger.Error("An error occurred while bootstrapping the container", ex);
             }
         }
     }

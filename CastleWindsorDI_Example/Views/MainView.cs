@@ -30,5 +30,25 @@ namespace CastleWindsorDI_Example.Views
             get=> this.lblMessage.Text;
             set=> this.lblMessage.Text = value;
         }
+
+        private void btnRobBank_Click(object sender, EventArgs e)
+        {
+            Presenter.RobBank();
+        }
+
+        private void btnShoot_Click(object sender, EventArgs e)
+        {
+            Presenter.Shoot();
+        }
+
+        private void btnArrest_Click(object sender, EventArgs e)
+        {
+            Presenter.Arrest();
+        }
+
+        private void btnSpeak_Click(object sender, EventArgs e)
+        {
+            Presenter.Speak();
+        }
     }
 }
