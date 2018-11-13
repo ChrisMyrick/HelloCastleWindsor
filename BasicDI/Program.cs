@@ -27,8 +27,8 @@ namespace BasicDI
             container.Register(Component.For<IConsoleWriter>().ImplementedBy<ConsoleWriter>());
 
 
-            // Resolve an object of type ICompositionRoot (ask the container for an instance)
-            // This is analogous to calling new() in a non-IoC application.
+            // Ask the container for an instance of IComposition root (resolve an object of type ICompositionRoot)
+            // "Resolve" is analogous to calling new() in a non-IoC application.
             var root = container.Resolve<ICompositionRoot>();
             root.LogMessage("Infrastructure wiring completed.");
         }
