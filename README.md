@@ -6,4 +6,4 @@ The BasicDI project introduces a simplistic example of applying ID in a console 
 
 MVP_WithDI illustrates how to leverage DI in a Winforms project that incorporates the MVP pattern.
 
-OOP_WithDI illustrates how to leverage DI in an object oriented application wherein constructors with parameters require a factory.
+(incomplete) OOP_WithDI illustrates how to leverage DI in an object oriented application wherein constructors with parameters require a factory.
