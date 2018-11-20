@@ -16,5 +16,6 @@ namespace CastleWindsorDI_Example.Interfaces
         string Speak();
         void Sleep();
         void Eat();
+        string WhomAmI();
     }
 }

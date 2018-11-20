@@ -1,6 +1,7 @@
 ﻿using CastleWindsorDI_Example.Interfaces;
 using CastleWindsorDI_Example.Views;
 using System;
+using System.Windows.Forms;
 
 namespace CastleWindsorDI_Example.Presenters
 {
@@ -48,8 +49,15 @@ namespace CastleWindsorDI_Example.Presenters
 
         public void Speak()
         {
-            Criminal.Speak();
-            PoliceOfficer.Speak();
+            var criminalQuote = Criminal.Speak();
+            var policeQuote = PoliceOfficer.Speak();
+            MessageBox.Show($"{criminalQuote} said the criminal. {Environment.NewLine} {Environment.NewLine} {policeQuote} said the police officer.");
+            
+        }
+
+        public void WhoWeAre()
+        {
+            MessageBox.Show($"{Criminal.WhomAmI()} said the criminal. {Environment.NewLine} {Environment.NewLine} {PoliceOfficer.WhomAmI()} said the police officer.");
         }
     }
 }

@@ -10,15 +10,17 @@ namespace CastleWindsorDI_Example.DomainObjects
         // an interface defines what something can do, but abstract classes define what something is.
         public string Name { get; set; }
         public Ethnicity Ethnicity { get; set; }
+        public string Role { get; set; }
 
-        public Person(string name, int age, decimal weight)
+        public Person(string name, string role, int age, decimal weight)
         {
             Name = name;
+            Role = role;
             base.Age = age;
             base.Weight = weight;
         }
 
-        public string Speak()
+        public virtual string Speak()
         {
             return "I think, therefore I am.";
         }
@@ -32,6 +34,11 @@ namespace CastleWindsorDI_Example.DomainObjects
         public override void Eat()
         {
             MessageBox.Show("I ate until I was satisfied, and not a bit more.");
+        }
+
+        public string WhomAmI()
+        {
+            return ($"My name is {Name}, I am a {Role}, I am {Age} old at {Weight} lbs.");
         }
 
     }

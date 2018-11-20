@@ -48,5 +48,10 @@ namespace CastleWindsorDI_Example.Views
         {
             Presenter.Speak();
         }
+
+        private void btnWhoWeAre_Click(object sender, EventArgs e)
+        {
+            Presenter.WhoWeAre();
+        }
     }
 }

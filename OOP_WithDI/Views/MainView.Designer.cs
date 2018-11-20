@@ -34,6 +34,7 @@
             this.btnArrest = new System.Windows.Forms.Button();
             this.btnShoot = new System.Windows.Forms.Button();
             this.btnRobBank = new System.Windows.Forms.Button();
+            this.btnWhoWeAre = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl1
@@ -94,11 +95,22 @@
             this.btnRobBank.UseVisualStyleBackColor = true;
             this.btnRobBank.Click += new System.EventHandler(this.btnRobBank_Click);
             // 
+            // btnWhoWeAre
+            // 
+            this.btnWhoWeAre.Location = new System.Drawing.Point(397, 124);
+            this.btnWhoWeAre.Name = "btnWhoWeAre";
+            this.btnWhoWeAre.Size = new System.Drawing.Size(106, 23);
+            this.btnWhoWeAre.TabIndex = 6;
+            this.btnWhoWeAre.Text = "Who We Are";
+            this.btnWhoWeAre.UseVisualStyleBackColor = true;
+            this.btnWhoWeAre.Click += new System.EventHandler(this.btnWhoWeAre_Click);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 200);
+            this.ClientSize = new System.Drawing.Size(537, 200);
+            this.Controls.Add(this.btnWhoWeAre);
             this.Controls.Add(this.btnRobBank);
             this.Controls.Add(this.btnShoot);
             this.Controls.Add(this.btnArrest);
@@ -120,6 +132,7 @@
         private System.Windows.Forms.Button btnArrest;
         private System.Windows.Forms.Button btnShoot;
         private System.Windows.Forms.Button btnRobBank;
+        private System.Windows.Forms.Button btnWhoWeAre;
     }
 }
 
