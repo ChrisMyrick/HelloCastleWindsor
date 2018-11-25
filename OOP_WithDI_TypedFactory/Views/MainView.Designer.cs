@@ -36,6 +36,7 @@
             this.btnRobBank = new System.Windows.Forms.Button();
             this.btnWhoWeAre = new System.Windows.Forms.Button();
             this.btnCriminalShootGun = new System.Windows.Forms.Button();
+            this.btnCriminalWeaponDesc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl1
@@ -109,7 +110,7 @@
             // btnCriminalShootGun
             // 
             this.btnCriminalShootGun.AutoEllipsis = true;
-            this.btnCriminalShootGun.Location = new System.Drawing.Point(107, 165);
+            this.btnCriminalShootGun.Location = new System.Drawing.Point(90, 171);
             this.btnCriminalShootGun.Name = "btnCriminalShootGun";
             this.btnCriminalShootGun.Size = new System.Drawing.Size(159, 23);
             this.btnCriminalShootGun.TabIndex = 7;
@@ -117,11 +118,23 @@
             this.btnCriminalShootGun.UseVisualStyleBackColor = true;
             this.btnCriminalShootGun.Click += new System.EventHandler(this.btnCriminalShootGun_Click);
             // 
+            // btnCriminalWeaponDesc
+            // 
+            this.btnCriminalWeaponDesc.AutoEllipsis = true;
+            this.btnCriminalWeaponDesc.Location = new System.Drawing.Point(90, 200);
+            this.btnCriminalWeaponDesc.Name = "btnCriminalWeaponDesc";
+            this.btnCriminalWeaponDesc.Size = new System.Drawing.Size(159, 23);
+            this.btnCriminalWeaponDesc.TabIndex = 8;
+            this.btnCriminalWeaponDesc.Text = "Criminal Weapon Description";
+            this.btnCriminalWeaponDesc.UseVisualStyleBackColor = true;
+            this.btnCriminalWeaponDesc.Click += new System.EventHandler(this.btnCriminalWeaponDesc_Click);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 200);
+            this.ClientSize = new System.Drawing.Size(684, 256);
+            this.Controls.Add(this.btnCriminalWeaponDesc);
             this.Controls.Add(this.btnCriminalShootGun);
             this.Controls.Add(this.btnWhoWeAre);
             this.Controls.Add(this.btnRobBank);
@@ -147,6 +160,7 @@
         private System.Windows.Forms.Button btnRobBank;
         private System.Windows.Forms.Button btnWhoWeAre;
         private System.Windows.Forms.Button btnCriminalShootGun;
+        private System.Windows.Forms.Button btnCriminalWeaponDesc;
     }
 }
 

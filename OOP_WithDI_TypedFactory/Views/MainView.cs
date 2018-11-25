@@ -58,5 +58,10 @@ namespace CastleWindsorDI_Example.Views
         {
             Presenter.CriminalShootGun();
         }
+
+        private void btnCriminalWeaponDesc_Click(object sender, EventArgs e)
+        {
+            Presenter.ShowCriminalWeaponDesc();
+        }
     }
 }

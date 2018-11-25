@@ -21,5 +21,6 @@ namespace CastleWindsorDI_Example.Presenters
         void Speak();
         void WhoWeAre();
         void CriminalShootGun();
+        void ShowCriminalWeaponDesc();
     }
 }

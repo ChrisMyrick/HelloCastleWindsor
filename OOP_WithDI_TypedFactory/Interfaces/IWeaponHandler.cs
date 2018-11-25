@@ -9,5 +9,6 @@ namespace CastleWindsorDI_Example.Interfaces
     public interface IWeaponHandler<TWeapon> where TWeapon: IWeapon
     {
         void Attack(TWeapon weapon);
+        string GetDescription();
     }
 }

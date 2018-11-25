@@ -4,12 +4,18 @@ using CastleWindsorDI_Example.Interfaces;
 
 namespace CastleWindsorDI_Example.DomainObjects
 {
-    public class Criminal : Person, ICriminal
+    public class Criminal : Person, ICriminal, IDisposable
     {
-        IWeaponHandlerFactory weapontFactory;
+        IWeaponHandlerFactory weaponFactory;
+
+        public IWeaponHandler<Handgun> WeaponHandler { get; set; }
+
         public Criminal(string name, string role, int age, decimal weight, IWeaponHandlerFactory weaponFactory) : base(name, role, age, weight)
         {
-            this.weapontFactory = weaponFactory;
+            this.weaponFactory = weaponFactory;
+            WeaponHandler = this.weaponFactory.Create<Handgun>("I am a criminal gun handler.");
+
+            
         }
 
         public void RobBank()
@@ -31,12 +37,33 @@ namespace CastleWindsorDI_Example.DomainObjects
 
         public void Attack(Handgun handgun)
         {
-            var handgunHandler = weapontFactory.Create<Handgun>();
-            handgunHandler.Attack(handgun);
-            weapontFactory.Release(handgunHandler);
-
+            WeaponHandler.Attack(handgun);
         }
 
-       
+        public void ShowWeaponDescription()
+        {
+            MessageBox.Show(WeaponHandler.GetDescription());
+        }
+
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                weaponFactory.Dispose();
+            }
+            // free native resources if there are any.
+            //if (nativeResource != IntPtr.Zero)
+            //{
+            //    Marshal.FreeHGlobal(nativeResource);
+            //    nativeResource = IntPtr.Zero;
+            //}
+        }
     }
 }

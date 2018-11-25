@@ -8,7 +8,8 @@ namespace CastleWindsorDI_Example.Interfaces
 {
     public interface IWeaponHandlerFactory
     {
-        IWeaponHandler<T> Create<T>() where T : IWeapon;
+        IWeaponHandler<T> Create<T>(string description) where T : IWeapon;
         void Release<T>(IWeaponHandler<T> instance) where T : IWeapon;
+        void Dispose();
     }
 }

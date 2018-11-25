@@ -18,5 +18,6 @@ namespace CastleWindsorDI_Example.Interfaces
         void Eat();
         void Attack(Handgun handgun);
         string WhomAmI();
+        void ShowWeaponDescription();
     }
 }

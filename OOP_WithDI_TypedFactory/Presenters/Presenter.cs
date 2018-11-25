@@ -66,5 +66,10 @@ namespace CastleWindsorDI_Example.Presenters
             var handgun = new Handgun(9, "Glock Special");
             Criminal.Attack(handgun);
         }
+
+        public void ShowCriminalWeaponDesc()
+        {
+            Criminal.ShowWeaponDescription();
+        }
     }
 }
