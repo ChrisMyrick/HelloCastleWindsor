@@ -5,16 +5,27 @@ using CastleWindsorDI_Example.Interfaces;
 
 namespace CastleWindsorDI_Example.DomainObjects
 {
-    public class PoliceOfficer : Person, IPoliceOfficer, IDisposable
+    public class PoliceOfficer : IPoliceOfficer, IDisposable
     {
-        IWeaponHandlerFactory weaponFactory;
+        private IPerson person = null;
+        private IWeaponHandlerFactory weaponFactory;
+        private IWeaponHandler<FireThrower> WeaponHandler { get; set; }
 
-        public IWeaponHandler<FireThrower> WeaponHandler { get; set; }
 
-        public PoliceOfficer(string name, string role, int age, decimal weight, IWeaponHandlerFactory weaponFactory) : base(name, role, age, weight)
+        public string Name { get => person.Name; }
+        public Ethnicity Ethnicity { get => person.Ethnicity; set => person.Ethnicity = value;}
+
+        public PoliceOfficer(IWeaponHandlerFactory weaponFactory)
         {
+            
             this.weaponFactory = weaponFactory;
             WeaponHandler = this.weaponFactory.Create<FireThrower>("I am a polic fire throw handler.");
+
+        }
+
+        public void Personify(IPerson person)
+        {
+            this.person = person;
         }
 
         public void Arrest()
@@ -27,7 +38,9 @@ namespace CastleWindsorDI_Example.DomainObjects
             MessageBox.Show("Shots fired!");
         }
 
-        public override string Speak()
+        // Notice that we don't delegate to the person's speack method. 
+        // Effectively equivalent to override if we inherited from Person.
+        public string Speak()
         {
             return ("I serve and protect, therefore I am.");
         }
@@ -41,6 +54,13 @@ namespace CastleWindsorDI_Example.DomainObjects
         {
             MessageBox.Show(WeaponHandler.GetDescription());
         }
+
+        // Delegate the following to person
+
+        public string WhomAmI() => this.person.WhomAmI();
+        public void Sleep() => this.person.Sleep();
+        public void Eat() => this.person.Eat();
+
 
 
         public void Dispose()
@@ -62,5 +82,7 @@ namespace CastleWindsorDI_Example.DomainObjects
             //    nativeResource = IntPtr.Zero;
             //}
         }
+
+        
     }
 }

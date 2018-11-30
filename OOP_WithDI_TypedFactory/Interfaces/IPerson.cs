@@ -9,9 +9,10 @@ namespace CastleWindsorDI_Example.Interfaces
 {
     public interface IPerson
     {
-        string Name { get; set; }
+        string Name { get; }
         Ethnicity Ethnicity { get; set; }
 
+        string WhomAmI();
         string Speak();
         void Sleep();
         void Eat();

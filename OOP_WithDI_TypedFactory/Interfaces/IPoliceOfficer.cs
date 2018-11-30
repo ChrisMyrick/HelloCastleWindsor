@@ -7,16 +7,11 @@ using CastleWindsorDI_Example.DomainObjects;
 
 namespace CastleWindsorDI_Example.Interfaces
 {
-    public interface IPoliceOfficer
+    public interface IPoliceOfficer: IPerson
     {
+        void Personify(IPerson person);
         void Arrest();
         void Shoot();
-        string Name { get; set; }
-        Ethnicity Ethnicity { get; set; }
-        string Speak();
-        void Sleep();
-        void Eat();
         void Attack(FireThrower fireThrower);
-        string WhomAmI();
     }
 }

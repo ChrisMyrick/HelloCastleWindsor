@@ -12,9 +12,15 @@ namespace CastleWindsorDI_Example.Presenters
         private ICriminal Criminal { get; set; }
         private IPoliceOfficer PoliceOfficer { get; set; }
 
-        public Presenter(ICriminal criminal, IPoliceOfficer officer) 
+        public Presenter(ICriminal criminal, IPoliceOfficer officer, IPersonFactory personFactory) 
         {
+            // We need to remember to compose a person with the criminal. 
+            // A factory maybe needed as the creation process gets more complicated.
+            criminal.Personify(personFactory.Create("Joker", "criminal", 46, 198));
             Criminal = criminal;
+
+            // Similarly, compose a peron with the officer 
+            officer.Personify(personFactory.Create("Batman", "police officer", 39, 214));
             PoliceOfficer = officer;
         }
 
@@ -63,6 +69,7 @@ namespace CastleWindsorDI_Example.Presenters
 
         public void CriminalShootGun()
         {
+            // Now, let's give the criminal a gun and ask him to attack.
             var handgun = new Handgun(9, "Glock Special");
             Criminal.Attack(handgun);
         }

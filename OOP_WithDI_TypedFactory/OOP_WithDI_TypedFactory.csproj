@@ -73,6 +73,7 @@
     <Compile Include="Interfaces\ICanSpeak.cs" />
     <Compile Include="Interfaces\ICriminal.cs" />
     <Compile Include="Interfaces\IPerson.cs" />
+    <Compile Include="Interfaces\IPersonFactory.cs" />
     <Compile Include="Interfaces\IPoliceOfficer.cs" />
     <Compile Include="Interfaces\IWeapon.cs" />
     <Compile Include="Interfaces\IWeaponHandler.cs" />
